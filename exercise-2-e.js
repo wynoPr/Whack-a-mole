@@ -9,6 +9,45 @@ let counterData = parseInt(counter.textContent)
 let pointsData = parseInt(points.textContent)
 let clock
 
+// Función para simular eventos táctiles
+function simularEventoTactil(tipo, x, y) {
+    var touch = new Touch({
+        identifier: Date.now(),
+        target: document.documentElement,
+        clientX: x,
+        clientY: y,
+        radiusX: 2.5,
+        radiusY: 2.5,
+        rotationAngle: 10,
+        force: 0.5
+    });
+
+    var touchEvent = new TouchEvent(tipo, {
+        cancelable: true,
+        bubbles: true,
+        touches: [touch],
+        targetTouches: [touch],
+        changedTouches: [touch],
+        shiftKey: true
+    });
+
+    document.dispatchEvent(touchEvent);
+}
+
+// Simular pinch in para hacer zoom
+function simularPinchIn() {
+    simularEventoTactil('touchstart', 100, 100);
+    simularEventoTactil('touchmove', 150, 150);
+    simularEventoTactil('touchend', 150, 150);
+}
+
+// Simular pinch out para hacer zoom out
+function simularPinchOut() {
+    simularEventoTactil('touchstart', 150, 150);
+    simularEventoTactil('touchmove', 100, 100);
+    simularEventoTactil('touchend', 100, 100);
+}
+
 //close explanation
 
 const cross$$ = document.querySelector('.explanation_close')
@@ -56,7 +95,10 @@ const timer = () => {
 btt$$.addEventListener('click', () => {
     if(counterData===30){
         clock = setInterval(timer, 1000);
-        btt$$.setAttribute('style',"display: none")
+        btt$$.setAttribute('style',"display: none");
+        setTimeout(simularPinchIn, 0);
+        setTimeout(simularPinchOut, 3000);
+        
     }else if(counterData===0){
         counter.textContent = 30
         counterData = 30
