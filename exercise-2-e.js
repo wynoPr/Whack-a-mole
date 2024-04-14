@@ -53,6 +53,7 @@ const timer = () => {
 
 //dobletap
 function simularDobleTap() {
+    console.log('tap-tap')
     // Obtener las dimensiones de la ventana
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
