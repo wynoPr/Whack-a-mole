@@ -58,6 +58,7 @@ btt$$.addEventListener('click', () => {
         clock = setInterval(timer, 1000);
         btt$$.setAttribute('style',"display: none");
 
+
     }else if(counterData===0){
         counter.textContent = 30
         counterData = 30
@@ -101,7 +102,7 @@ const moles = () => {
     const position$$ = document.querySelector(positionCl)
 
     const add1 = () => {
-        //position$$.removeEventListener('click', add1)
+        position$$.removeEventListener('click', add1)
         position$$.removeEventListener('touchstart', add1)
         pointsData++
         console.log(counterData)
@@ -111,7 +112,7 @@ const moles = () => {
         setTimeout(clear, 200)
     } 
     const add2 = () => {
-        //position$$.removeEventListener('click', add2)
+        position$$.removeEventListener('click', add2)
         position$$.removeEventListener('touchstart', add2)
         pointsData = pointsData + 2
         console.log(counterData)
@@ -122,7 +123,7 @@ const moles = () => {
     }
 
     const min2 = () => {
-        //position$$.removeEventListener('click', min2)
+        position$$.removeEventListener('click', min2)
         position$$.removeEventListener('touchstart', min2)
         pointsData = pointsData - 2
         console.log(counterData)
@@ -135,30 +136,30 @@ const moles = () => {
     if( moleType === 0){
         position$$.setAttribute('style',"background-image: url('2x/mole_4a.png')")
         position$$.setAttribute('data-value','1')
-        //position$$.addEventListener('click', add1)
+        position$$.addEventListener('click', add1)
         position$$.addEventListener('touchstart', add1)
     }
     else if( moleType === 1){
         position$$.setAttribute('style',"background-image: url('2x/mole_4b.png')")
         position$$.setAttribute('data-value','1')
-        //position$$.addEventListener('click', add2)
+        position$$.addEventListener('click', add2)
         position$$.addEventListener('touchstart', add2)
     }
     else if( moleType === 2){
         position$$.setAttribute('style',"background-image: url('2x/mole_4c.png')")
         position$$.setAttribute('data-value','1')
-        //position$$.addEventListener('click', min2)
+        position$$.addEventListener('click', min2)
         position$$.addEventListener('touchstart', min2)
     
     }
     const clear = () => {
         position$$.setAttribute('style',"background-image: url(2x/hole.png)")
         position$$.removeAttribute('data-value')
-        //position$$.removeEventListener('click', add1)
+        position$$.removeEventListener('click', add1)
         position$$.removeEventListener('touchstart', add1)
-        //position$$.removeEventListener('click', add2)
+        position$$.removeEventListener('click', add2)
         position$$.removeEventListener('touchstart', add2)
-        //position$$.removeEventListener('click', min2)
+        position$$.removeEventListener('click', min2)
         position$$.removeEventListener('touchstart', min2)
     }
     

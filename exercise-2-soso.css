@@ -15,7 +15,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 h1 {
@@ -160,18 +159,11 @@ figcaption {
 }
 
 .img_1 {
-  width: 60vw;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: none;
 }
 
 .img_2 {
-  width: 60vw;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  display: none;
 }
 
 .header {
@@ -213,17 +205,17 @@ figcaption {
   height: 16vw;
   background-image: url(2x/hole.png);
   background-size: cover;
+  z-index: 5;
 }
 
 .b-grid {
   width: 80vw;
-  position: absolute;
-  bottom: -25vw;
+  position: relative;
+  top: 30%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: center;
-  z-index: 5;
   top: 10vw;
 }
 

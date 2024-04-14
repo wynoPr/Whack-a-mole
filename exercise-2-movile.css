@@ -15,7 +15,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 h1 {
@@ -160,18 +159,11 @@ figcaption {
 }
 
 .img_1 {
-  width: 60vw;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: none;
 }
 
 .img_2 {
-  width: 60vw;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  display: none;
 }
 
 .header {
@@ -208,22 +200,22 @@ figcaption {
   background-color: #EF693A;
 }
 
-@media only screen and (min-aspect-ratio: 9/17) {
+@media only screen and (min-aspect-ratio: 9/18) {
   .b-square {
     width: 22vw;
     height: 22vw;
     background-image: url(2x/hole.png);
     background-size: cover;
+    z-index: 5;
   }
   .b-grid {
     width: 88vw;
     position: relative;
-    bottom: -20vh;
+    top: 25%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
-    z-index: 5;
   }
   .square_0 {
     margin-left: 22vw;
@@ -238,12 +230,13 @@ figcaption {
     margin-right: 11vw;
   }
 }
-@media only screen and (max-aspect-ratio: 9/17) {
+@media only screen and (max-aspect-ratio: 9/18) {
   .b-square {
     width: 30vw;
     height: 30vw;
     background-image: url(2x/hole.png);
     background-size: cover;
+    z-index: 5;
   }
   .b-grid {
     width: 90vw;
@@ -253,7 +246,6 @@ figcaption {
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
-    z-index: 5;
   }
 }
 .b-mole {

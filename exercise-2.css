@@ -14,7 +14,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 h1 {
@@ -208,6 +207,7 @@ figcaption {
   height: 12vw;
   background-image: url(2x/hole.png);
   background-size: cover;
+  z-index: 5;
 }
 
 .b-grid {
@@ -217,7 +217,6 @@ figcaption {
   flex-flow: row wrap;
   justify-content: center;
   align-content: center;
-  z-index: 5;
   position: relative;
   top: 5vw;
 }
