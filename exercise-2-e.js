@@ -51,6 +51,81 @@ const timer = () => {
     }
 }
 
+function simularScrollDown() {
+    // Coordenadas de inicio del toque (abajo)
+    var startX = window.innerWidth / 2;
+    var startY = window.innerHeight - 50; // Puedes ajustar esta posición según necesites
+
+    // Coordenadas de finalización del toque (arriba)
+    var endX = startX;
+    var endY = 50; // Puedes ajustar esta posición según necesites
+
+    // Crear evento táctil de inicio
+    var touchStart = new Touch({
+        identifier: Date.now(),
+        target: document.documentElement,
+        clientX: startX,
+        clientY: startY,
+        radiusX: 2.5,
+        radiusY: 2.5,
+        rotationAngle: 10,
+        force: 0.5
+    });
+
+    // Crear evento táctil de movimiento (drag)
+    var touchMove = new Touch({
+        identifier: Date.now(),
+        target: document.documentElement,
+        clientX: endX,
+        clientY: endY,
+        radiusX: 2.5,
+        radiusY: 2.5,
+        rotationAngle: 10,
+        force: 0.5
+    });
+
+    // Crear evento táctil de finalización
+    var touchEnd = new Touch({
+        identifier: Date.now(),
+        target: document.documentElement,
+        clientX: endX,
+        clientY: endY,
+        radiusX: 2.5,
+        radiusY: 2.5,
+        rotationAngle: 10,
+        force: 0.5
+    });
+
+    // Despachar los eventos táctiles
+    document.dispatchEvent(new TouchEvent('touchstart', {
+        cancelable: true,
+        bubbles: true,
+        touches: [touchStart],
+        targetTouches: [touchStart],
+        changedTouches: [touchStart],
+        shiftKey: true
+    }));
+
+    document.dispatchEvent(new TouchEvent('touchmove', {
+        cancelable: true,
+        bubbles: true,
+        touches: [touchMove],
+        targetTouches: [touchMove],
+        changedTouches: [touchMove],
+        shiftKey: true
+    }));
+
+    document.dispatchEvent(new TouchEvent('touchend', {
+        cancelable: true,
+        bubbles: true,
+        touches: [],
+        targetTouches: [],
+        changedTouches: [touchEnd],
+        shiftKey: true
+    }));
+}
+
+
 //reloj
 
 btt$$.addEventListener('click', () => {
@@ -58,6 +133,7 @@ btt$$.addEventListener('click', () => {
         clock = setInterval(timer, 1000);
         btt$$.setAttribute('style',"display: none");
 
+        simularScrollDown()
 
     }else if(counterData===0){
         counter.textContent = 30
