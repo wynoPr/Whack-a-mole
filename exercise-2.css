@@ -1,0 +1,238 @@
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  list-style: none;
+}
+
+body {
+  background-image: url(2x/background_xl.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  font-family: "Caprasimo", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3vw;
+  width: 100%;
+  margin-bottom: 0.7vw;
+}
+
+h2 {
+  color: #2D2A26;
+  font-family: "Caprasimo", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2.5vw;
+  margin-right: 3vw;
+}
+
+h3 {
+  color: #2D2A26;
+  font-family: "Caprasimo", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2vw;
+  padding: 0.5vw 0.5vw 0 0.5vw;
+}
+
+h4 {
+  color: white;
+  font-family: "Caprasimo", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5vw;
+  padding: 0.5vw 0vw;
+}
+
+p {
+  color: #2D2A26;
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 1vw;
+}
+
+figcaption {
+  color: #EF693A;
+  font-family: "Caprasimo", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5vw;
+}
+
+.explanation {
+  position: relative;
+  width: 50vw;
+  z-index: 9;
+  background-color: #F4C748;
+  border: 0.5vw Solid #FC9B4C;
+  border-radius: 0.3vw;
+  padding: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.explanation_back {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(45, 42, 38, 0.4431372549);
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.explanation_txt {
+  width: 60vw;
+}
+.explanation_figure {
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2vw;
+}
+.explanation_img {
+  width: 10vw;
+}
+.explanation_close {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  font-size: 2vw;
+  color: #2D2A26;
+}
+.explanation_close:hover {
+  color: #EF693A;
+}
+
+.score {
+  position: relative;
+  width: 50vw;
+  z-index: 10;
+  background-color: #F4C748;
+  border: 0.5vw Solid #FC9B4C;
+  border-radius: 0.3vw;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.score_back {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(45, 42, 38, 0.4431372549);
+  z-index: 7;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.score_txt {
+  width: 30vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.score_close {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  font-size: 3vw;
+  color: #2D2A26;
+}
+.score_close:hover {
+  color: #EF693A;
+}
+
+.img_1 {
+  width: 40vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.img_2 {
+  width: 30vw;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.header {
+  width: 60vw;
+  margin: 2vw 0 0 0;
+  padding: 2vw 2vw 2vw 1vw;
+  position: relative;
+  z-index: 5;
+  background-color: #F4C748;
+  border: 0.5vw Solid #FC9B4C;
+  border-radius: 0.3vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.start_button {
+  position: absolute;
+  right: 4vw;
+  bottom: 2vw;
+  color: white;
+  font-family: "Caprasimo", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.5vw;
+  padding: 0.5vw 1vw;
+  border-radius: 0.3vw;
+  background-color: #FC9B4C;
+}
+
+.start_button:hover {
+  background-color: #EF693A;
+}
+
+.b-square {
+  width: 12vw;
+  height: 12vw;
+  background-image: url(2x/hole.png);
+  background-size: cover;
+}
+
+.b-grid {
+  width: 70vw;
+  height: 24vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  z-index: 5;
+  position: relative;
+  top: 5vw;
+}
+
+.square_0 {
+  margin-left: 6vw;
+}
+
+.square_3 {
+  margin-right: 6vw;
+}
+
+.b-mole {
+  background-image: url("public/exercise-2/mole.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}/*# sourceMappingURL=exercise-2.css.map */

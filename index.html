@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="2x/mole_5.png" rel="icon" type="img/png">
+    <title>Whack a mole</title>
+    <script src="exercise-2-e.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="exercise-2.css" type="text/css" media="only screen and (min-aspect-ratio: 4/3)">
+    <link rel="stylesheet" href="exercise-2-soso.css" type="text/css" media="only screen and (max-aspect-ratio: 4/3) and (min-aspect-ratio: 3/4)">
+    <link rel="stylesheet" href="exercise-2-movile.css" type="text/css" media="only screen and (max-aspect-ratio: 3/4)">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Whack a mole!</h1>
+
+      <h3>Your score:</h3>
+      <h2 data-function="score" class="header_value">0</h2>
+
+      <h3>Seconds left:</h3>
+      <h2 data-function="time-left" class="header_value">30</h2>
+      <button class="start_button">Start</button>
+    </header>
+    <div class="b-grid">
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+      <div data-function="square" class="b-square"></div>
+    </div>
+    <img class="img_1" src="2x/background_plants_left.png" alt="Decoration leafes">
+    <img class="img_2" src="2x/background_plants_right.png" alt="Decoration leafes">
+    <div class="explanation_back" >
+      <div class="explanation">
+        <h4 class="explanation_txt">Master speed and precision as you try to hit the moles that pop up and disappear in this thrilling reflex challenge!</h4>
+        <p class="explanation_txt">Each mole you successfully hit earns you a certain number of points, with higher points awarded for moles that appear and disappear quickly, adding to the challenge and excitement!</p>
+        <figure class="explanation_figure"><img class="explanation_img" src="2x/mole_4a.png"><figcaption>+ 1 point</figcaption></figure>
+        <figure class="explanation_figure"><img class="explanation_img" src="2x/mole_4b.png"><figcaption>+ 2 points</figcaption></figure>
+        <figure class="explanation_figure"><img class="explanation_img" src="2x/mole_4c.png"><figcaption>- 2 points</figcaption></figure>
+        <span class="material-symbols-rounded explanation_close">close</span>
+      </div>
+    </div>
+    <div class="score_back" >
+      <div class="score">
+        <h3 class="score_txt"> Your total score is:</h3>
+        <h3 class="score_txt" data-function="scored">0</h3>
+        <span class="material-symbols-rounded score_close">close</span>
+      </div>
+    </div>
+  </body>
+</html>
