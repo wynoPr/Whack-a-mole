@@ -51,52 +51,41 @@ const timer = () => {
     }
 }
 
-function simularScrollDown() {
-    // Coordenadas de inicio del toque (abajo)
-    var startX = window.innerWidth / 2;
-    var startY = window.innerHeight - 50; // Puedes ajustar esta posición según necesites
+//dobletap
+function simularDobleTap() {
+    // Obtener las dimensiones de la ventana
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
 
-    // Coordenadas de finalización del toque (arriba)
-    var endX = startX;
-    var endY = 50; // Puedes ajustar esta posición según necesites
+    // Calcular las coordenadas del centro de la pantalla
+    var centerX = windowWidth / 2;
+    var centerY = windowHeight / 2;
 
-    // Crear evento táctil de inicio
+    // Crear evento táctil para el primer toque
     var touchStart = new Touch({
         identifier: Date.now(),
         target: document.documentElement,
-        clientX: startX,
-        clientY: startY,
+        clientX: centerX,
+        clientY: centerY,
         radiusX: 2.5,
         radiusY: 2.5,
         rotationAngle: 10,
         force: 0.5
     });
 
-    // Crear evento táctil de movimiento (drag)
-    var touchMove = new Touch({
-        identifier: Date.now(),
-        target: document.documentElement,
-        clientX: endX,
-        clientY: endY,
-        radiusX: 2.5,
-        radiusY: 2.5,
-        rotationAngle: 10,
-        force: 0.5
-    });
-
-    // Crear evento táctil de finalización
+    // Crear evento táctil para el segundo toque (doble tap)
     var touchEnd = new Touch({
         identifier: Date.now(),
         target: document.documentElement,
-        clientX: endX,
-        clientY: endY,
+        clientX: centerX,
+        clientY: centerY,
         radiusX: 2.5,
         radiusY: 2.5,
         rotationAngle: 10,
         force: 0.5
     });
 
-    // Despachar los eventos táctiles
+    // Despachar el evento de inicio del primer toque
     document.dispatchEvent(new TouchEvent('touchstart', {
         cancelable: true,
         bubbles: true,
@@ -106,23 +95,17 @@ function simularScrollDown() {
         shiftKey: true
     }));
 
-    document.dispatchEvent(new TouchEvent('touchmove', {
-        cancelable: true,
-        bubbles: true,
-        touches: [touchMove],
-        targetTouches: [touchMove],
-        changedTouches: [touchMove],
-        shiftKey: true
-    }));
-
-    document.dispatchEvent(new TouchEvent('touchend', {
-        cancelable: true,
-        bubbles: true,
-        touches: [],
-        targetTouches: [],
-        changedTouches: [touchEnd],
-        shiftKey: true
-    }));
+    // Despachar el evento de finalización del segundo toque (doble tap)
+    setTimeout(function() {
+        document.dispatchEvent(new TouchEvent('touchend', {
+            cancelable: true,
+            bubbles: true,
+            touches: [],
+            targetTouches: [],
+            changedTouches: [touchEnd],
+            shiftKey: true
+        }));
+    }, 100); // Ajusta este valor según sea necesario para simular el tiempo entre toques
 }
 
 
@@ -133,7 +116,8 @@ btt$$.addEventListener('click', () => {
         clock = setInterval(timer, 1000);
         btt$$.setAttribute('style',"display: none");
 
-        simularScrollDown()
+        simularDobleTap();
+        setTimeout(simularDobleTap(), 300)
 
     }else if(counterData===0){
         counter.textContent = 30
