@@ -9,45 +9,6 @@ let counterData = parseInt(counter.textContent)
 let pointsData = parseInt(points.textContent)
 let clock
 
-// Función para simular eventos táctiles
-function simularEventoTactil(tipo, x, y) {
-    var touch = new Touch({
-        identifier: Date.now(),
-        target: document.documentElement,
-        clientX: x,
-        clientY: y,
-        radiusX: 2.5,
-        radiusY: 2.5,
-        rotationAngle: 10,
-        force: 0.5
-    });
-
-    var touchEvent = new TouchEvent(tipo, {
-        cancelable: true,
-        bubbles: true,
-        touches: [touch],
-        targetTouches: [touch],
-        changedTouches: [touch],
-        shiftKey: true
-    });
-
-    document.dispatchEvent(touchEvent);
-}
-
-// Simular pinch in para hacer zoom
-function simularPinchIn() {
-    simularEventoTactil('touchstart', 100, 100);
-    simularEventoTactil('touchmove', 150, 150);
-    simularEventoTactil('touchend', 150, 150);
-}
-
-// Simular pinch out para hacer zoom out
-function simularPinchOut() {
-    simularEventoTactil('touchstart', 150, 150);
-    simularEventoTactil('touchmove', 100, 100);
-    simularEventoTactil('touchend', 100, 100);
-}
-
 //close explanation
 
 const cross$$ = document.querySelector('.explanation_close')
@@ -96,9 +57,7 @@ btt$$.addEventListener('click', () => {
     if(counterData===30){
         clock = setInterval(timer, 1000);
         btt$$.setAttribute('style',"display: none");
-        setTimeout(simularPinchIn, 0);
-        setTimeout(simularPinchOut, 3000);
-        
+
     }else if(counterData===0){
         counter.textContent = 30
         counterData = 30
@@ -142,7 +101,7 @@ const moles = () => {
     const position$$ = document.querySelector(positionCl)
 
     const add1 = () => {
-        position$$.removeEventListener('click', add1)
+        //position$$.removeEventListener('click', add1)
         position$$.removeEventListener('touchstart', add1)
         pointsData++
         console.log(counterData)
@@ -152,7 +111,7 @@ const moles = () => {
         setTimeout(clear, 200)
     } 
     const add2 = () => {
-        position$$.removeEventListener('click', add2)
+        //position$$.removeEventListener('click', add2)
         position$$.removeEventListener('touchstart', add2)
         pointsData = pointsData + 2
         console.log(counterData)
@@ -163,7 +122,7 @@ const moles = () => {
     }
 
     const min2 = () => {
-        position$$.removeEventListener('click', min2)
+        //position$$.removeEventListener('click', min2)
         position$$.removeEventListener('touchstart', min2)
         pointsData = pointsData - 2
         console.log(counterData)
@@ -176,30 +135,30 @@ const moles = () => {
     if( moleType === 0){
         position$$.setAttribute('style',"background-image: url('2x/mole_4a.png')")
         position$$.setAttribute('data-value','1')
-        position$$.addEventListener('click', add1)
+        //position$$.addEventListener('click', add1)
         position$$.addEventListener('touchstart', add1)
     }
     else if( moleType === 1){
         position$$.setAttribute('style',"background-image: url('2x/mole_4b.png')")
         position$$.setAttribute('data-value','1')
-        position$$.addEventListener('click', add2)
+        //position$$.addEventListener('click', add2)
         position$$.addEventListener('touchstart', add2)
     }
     else if( moleType === 2){
         position$$.setAttribute('style',"background-image: url('2x/mole_4c.png')")
         position$$.setAttribute('data-value','1')
-        position$$.addEventListener('click', min2)
+        //position$$.addEventListener('click', min2)
         position$$.addEventListener('touchstart', min2)
     
     }
     const clear = () => {
         position$$.setAttribute('style',"background-image: url(2x/hole.png)")
         position$$.removeAttribute('data-value')
-        position$$.removeEventListener('click', add1)
+        //position$$.removeEventListener('click', add1)
         position$$.removeEventListener('touchstart', add1)
-        position$$.removeEventListener('click', add2)
+        //position$$.removeEventListener('click', add2)
         position$$.removeEventListener('touchstart', add2)
-        position$$.removeEventListener('click', min2)
+        //position$$.removeEventListener('click', min2)
         position$$.removeEventListener('touchstart', min2)
     }
     
