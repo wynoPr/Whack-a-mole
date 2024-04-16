@@ -45,6 +45,14 @@ h3 {
   padding: 0.5vw 0.5vw 0 1vw;
 }
 
+h3.ugly {
+  color: #2D2A26;
+  font-family: monospace;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 5vw;
+}
+
 h4 {
   color: white;
   font-family: "Caprasimo", serif;
@@ -163,6 +171,10 @@ figcaption {
 }
 
 .img_2 {
+  display: none;
+}
+
+.mobile_block {
   display: none;
 }
 
