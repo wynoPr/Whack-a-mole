@@ -19,4 +19,14 @@
 .mobile_block_txt {
   padding: 0 0 2vw 0;
   text-align: center;
+}
+.mobile_block_close {
+  position: absolute;
+  top: 5vw;
+  right: 5vw;
+  font-size: 5vw;
+  color: #2D2A26;
+}
+.mobile_block_close:hover {
+  color: #EF693A;
 }/*# sourceMappingURL=mobile-styles.css.map */

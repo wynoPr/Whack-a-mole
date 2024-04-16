@@ -31,6 +31,17 @@ const closeS = () => {
 crossS$$.addEventListener('click', closeS)
 backS$$.addEventListener('click', closeS)
 
+//close mobile block
+
+const crossB$$ = document.querySelector('.mobile_block_close')
+const window$$ = document.querySelector('.mobile_block')
+
+const closeB = () => {
+    window$$.setAttribute('style',"display: none")
+}
+crossB$$.addEventListener('click', closeB)
+window$$.addEventListener('click', closeB)
+
 //counter
 
 const timer = () => {
